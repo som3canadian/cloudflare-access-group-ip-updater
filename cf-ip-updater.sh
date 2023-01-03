@@ -38,6 +38,7 @@ function changeIP() {
 }
 
 function compareIP() {
+  # localIP="1.1.1.1"
   # compare with if statement and update if not the same
   if [[ "$localIP" == "$currentGroupIP" ]]; then
     echo "IP are the same, nothing to do"
