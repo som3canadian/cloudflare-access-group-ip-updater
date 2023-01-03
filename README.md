@@ -2,7 +2,7 @@
 
 ## Problem Description
 
-- Service behind zerotrust who need to access another service behind zerostrus (services are on different devices. ex: raspberry pi)
+- Service behind zerotrust who need to access another service behind zerostrust (services are on different devices. ex: raspberry pi)
 - Cannot use Cloudflare service auth built-in functionality. Created an access group base on IP address.
 - The Public IP is changing (not static) (ex: your home public IP)
 
@@ -22,7 +22,7 @@ $ sudo apt install jq curl
 ```
 
 - Cloudflare [Account ID](https://developers.cloudflare.com/fundamentals/get-started/basic-tasks/find-account-and-zone-ids/).
-- Access Group UID (zerotrust section) with the authorize ip address. Find your public IP [here](https://ipinfo.io/).
+- Access Group UID (ZeroTrust section) with the authorize ip address. Find your public IP [here](https://ipinfo.io/).
 - [Api Token](https://developers.cloudflare.com/fundamentals/api/get-started/create-token/) with read and edit on "Access: Identity Providers and Groups" in your Account.
 
 ![Token permissions](./images/screenshot1.jpg)
@@ -42,7 +42,7 @@ cd cloudflare-access-group-ip-updater
 - make sure it works
   - At line 21-30-41 there is a commented variable for testing.
   - There is 3 line that you can uncommented for testing. Line: 21-30-41. At line 41 is to play with IP, making sure the IPs whitin the group is changing.
-- setup a cron (optional)
+- setup a cron
 
 ```bash
 # add cron
