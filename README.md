@@ -38,7 +38,7 @@ git clone https://github.com/som3canadian/cloudflare-access-group-ip-updater.git
 cd cloudflare-access-group-ip-updater
 ```
 
-- change the variables at line 9-10-11
+- change the variables at line 8-9-10-11
 - make sure it works
   - At line 21-30-41 there is a commented variable for testing.
   - There is 3 line that you can uncommented for testing. Line: 21-30-41. At line 41 is to play with IP, making sure the IPs whitin the group is changing.
@@ -60,6 +60,6 @@ function changeIP() {
   curl -X PUT "https://api.cloudflare.com/client/v4/accounts/$accountID/access/groups/$groupUID" \
      -H "Authorization: Bearer $apiToken" \
      -H "Content-Type: application/json" \
-     --data "{\"name\":\"IPs\",\"include\":[{\"ip\":{\"ip\":\"$localIP/32\"}},{\"ip\":{\"ip\":\"<your-new-ip>/32\"}}],\"exclude\":[],\"require\":[]}"
+     --data "{\"name\":\"$groupName\",\"include\":[{\"ip\":{\"ip\":\"$localIP/32\"}},{\"ip\":{\"ip\":\"<your-new-ip>/32\"}}],\"exclude\":[],\"require\":[]}"
 }
 ```
